@@ -1,21 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TRND Agency</title>
-<link rel="stylesheet" href="css/style.css" />
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+:root{
+ --primary:#3B6AFF;
+ --bg-deep:#05142b;
+ --bg-alt:#143c8c;
+ --white:#fff;
+ --dim:rgba(255,255,255,.7);
+}
+
+*{
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:"Inter",sans-serif;
+}
+
+body{
+ background:var(--bg-deep);
+ color:white;
+ overflow-x:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+ position:fixed;
+ top:0;
+ width:100%;
+ padding:20px 60px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ transition:.4s;
+ z-index:999;
+}
+
+header.scrolled{
+ background:#05142bdd;
+ backdrop-filter:blur(10px);
+}
+
+nav a{
+ margin-left:30px;
+ text-decoration:none;
+ color:white;
+ font-weight:500;
+ transition:.3s;
+}
+
+nav a:hover{
+ color:var(--primary);
+}
+
+.logo{
+ font-weight:900;
+ letter-spacing:2px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+ height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ position:relative;
+ overflow:hidden;
+}
+
+.hero-content{
+ text-align:center;
+ z-index:2;
+ transition:.6s;
+}
+
+.hero h1{
+ font-size:clamp(40px,6vw,90px);
+ font-weight:900;
+}
+
+.hero p{
+ margin-top:20px;
+ font-weight:300;
+ color:var(--dim);
+ max-width:600px;
+}
+
+.video-box{
+ position:absolute;
+ width:40%;
+ height:350px;
+ border-radius:20px;
+ overflow:hidden;
+ transition:1s ease;
+ z-index:1;
+}
+
+.video-box video{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+}
+
+.video-expanded{
+ width:100vw !important;
+ height:100vh !important;
+ border-radius:0 !important;
+}
+
+.fade{
+ opacity:0;
+ transform:translateY(-40px);
+}
+
+/* =========================
+   TICKER
+========================= */
+
+.ticker{
+ height:120px;
+ overflow:hidden;
+ position:relative;
+ margin-top:100px;
+}
+
+.track{
+ display:flex;
+ width:max-content;
+ animation:scroll 25s linear infinite;
+ opacity:.4;
+}
+
+.track img{
+ height:120px;
+}
+
+@keyframes scroll{
+ from{transform:translateX(0)}
+ to{transform:translateX(-50%)}
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:60px;
+ padding:120px 10%;
+}
+
+.about h2{
+ font-size:42px;
+ margin-bottom:20px;
+}
+
+.box{
+ background:var(--bg-alt);
+ padding:30px;
+ border-radius:16px;
+ margin-bottom:20px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services{
+ padding:120px 10%;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:30px;
+}
+
+.card{
+ background:#0c2552;
+ padding:40px;
+ border-radius:20px;
+ border:1px solid transparent;
+ transition:.4s;
+}
+
+.card:hover{
+ transform:scale(1.05);
+ border:1px solid var(--primary);
+}
+
+.card h3{
+ margin:20px 0;
+}
+
+.card ul{
+ padding-left:18px;
+ color:var(--dim);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+ background:#020b1b;
+ padding:80px 10% 40px;
+ margin-top:100px;
+}
+
+.footer-grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:40px;
+}
+
+.footer-grid h4{
+ margin-bottom:20px;
+}
+
+.footer-grid a{
+ display:block;
+ color:var(--dim);
+ margin-bottom:10px;
+ text-decoration:none;
+}
+
+.footer-grid a:hover{
+ color:white;
+}
+
+.bottom{
+ text-align:center;
+ margin-top:50px;
+ color:var(--dim);
+ font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+ header{
+ padding:20px;
+ }
+
+ .about{
+ grid-template-columns:1fr;
+ }
+
+ .video-box{
+ width:80%;
+ }
+
+}
+
+</style>
 </head>
 <body>
 
-<div id="loader">Loading...</div>
+<!-- HEADER -->
+<header id="header">
+<div class="logo">TRND</div>
 
-<nav id="navbar"></nav>
+<nav>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Portfolio</a>
+<a href="#">Contact</a>
+</nav>
+</header>
 
-<main id="app"></main>
 
-<footer id="footer"></footer>
+<!-- HERO -->
+<section class="hero" id="hero">
 
-<script src="js/app.js"></script>
+<div class="hero-content" id="heroContent">
+<h1>Shape it ALL!</h1>
+<p>In 2017, the TRND made its debut as a creative powerhouse delivering next-level production, media, and digital experiences.</p>
+</div>
+
+<div class="video-box" id="videoBox">
+<video autoplay muted loop>
+<source src="showreel_video.mp4">
+</video>
+</div>
+
+</section>
+
+
+<!-- TICKER -->
+<section class="ticker">
+<div class="track">
+<img src="pattern.svg">
+<img src="pattern.svg">
+<img src="pattern.svg">
+<img src="pattern.svg">
+</div>
+</section>
+
+
+<!-- ABOUT -->
+<section class="about">
+
+<div>
+<h2>OUR STORY</h2>
+<p style="color:var(--dim);line-height:1.8">
+Founded in 2017, TRND evolved from a creative studio into a full-scale agency delivering production, events, and digital campaigns across industries.  
+Through innovation, strategy, and bold storytelling, we shape brands into experiences.
+</p>
+</div>
+
+<div>
+<div class="box">
+<h3>MISSION</h3>
+<p>Deliver creative solutions that transform brands into unforgettable experiences.</p>
+</div>
+
+<div class="box">
+<h3>VISION</h3>
+<p>Become the region’s most influential creative force shaping modern digital culture.</p>
+</div>
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section class="services">
+
+<div class="card">
+<h3>Production</h3>
+<ul>
+<li>Commercial shoots</li>
+<li>Brand films</li>
+<li>Documentaries</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Creative</h3>
+<ul>
+<li>Brand Identity</li>
+<li>Concept Design</li>
+<li>Campaign Strategy</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Events</h3>
+<ul>
+<li>Launch Events</li>
+<li>Stage Design</li>
+<li>Experiential Activations</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Social Media</h3>
+<ul>
+<li>Content Creation</li>
+<li>Management</li>
+<li>Growth Strategy</li>
+</ul>
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<h4>TRND</h4>
+<p>Shape it ALL!</p>
+</div>
+
+<div>
+<h4>Links</h4>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Portfolio</a>
+</div>
+
+<div>
+<h4>Contact</h4>
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">LinkedIn</a>
+<p>Sana'a, Yemen</p>
+</div>
+
+</div>
+
+<div class="bottom">
+©2026 thetrnd. All rights reserved
+</div>
+
+</footer>
+
+
+<!-- =========================
+     SCRIPT
+========================= -->
+<script>
+
+// header scroll effect
+window.addEventListener("scroll",()=>{
+ document.getElementById("header")
+ .classList.toggle("scrolled",window.scrollY>50);
+});
+
+
+// hero video expand
+let expanded=false;
+
+document.getElementById("hero")
+.addEventListener("mousemove",()=>{
+
+ if(!expanded){
+  document.getElementById("videoBox")
+  .classList.add("video-expanded");
+
+  document.getElementById("heroContent")
+  .classList.add("fade");
+
+  expanded=true;
+ }
+
+});
+
+</script>
+
 </body>
 </html>
