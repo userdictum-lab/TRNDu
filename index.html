@@ -1,67 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TRND Agency</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRND | Shape it ALL!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<!-- FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.svg" alt="TRND Logo">
+            </div>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact us</a>
+            </nav>
+        </div>
+    </header>
 
-<style>
+    <main>
+        <section class="hero-section" id="hero">
+            <div class="hero-content" id="heroText">
+                <h1 class="main-headline">Shape it ALL!</h1>
+                <div class="hero-subtext">
+                    <p>In 2017, the TRND made its debut in the industry.</p>
+                    <p>In 2024, a new leadership acquisition marked a pivotal moment in the company's evolution,</p>
+                </div>
+            </div>
 
-/* =========================
-   GLOBAL STYLES
-========================= */
-:root{
- --primary:#3B6AFF;
- --bg-deep:#05142b;
- --bg-alt:#143c8c;
- --white:#fff;
- --dim:rgba(255,255,255,.7);
-}
+            <div class="video-container" id="videoWrapper">
+                <h2 class="video-overlay-text">VIDEO OF THE MOST IMPORTANT WORKS</h2>
+                <video autoplay loop muted playsinline class="hero-video">
+                    <source src="showreel.mp4" type="video/mp4">
+                </video>
+                <div class="video-shade"></div>
+            </div>
+        </section>
 
-*{
- margin:0;
- padding:0;
- box-sizing:border-box;
- font-family:"Inter",sans-serif;
-}
+        <div class="pattern-marquee">
+            <div class="marquee-track">
+                <img src="pattern.svg" alt="Pattern">
+                <img src="pattern.svg" alt="Pattern"> </div>
+        </div>
 
-body{
- background:var(--bg-deep);
- color:white;
- overflow-x:hidden;
-}
+        <section class="services-section" id="services">
+            <h2 class="section-title">OUR SERVICES</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Production</h3>
+                    <ul><li>Video production</li><li>Audio production</li><li>Broadcast</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>Creative</h3>
+                    <ul><li>Strategy</li><li>Branding</li><li>Copywriting</li><li>Design</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>Events</h3>
+                    <ul><li>Planning</li><li>Exhibition</li><li>Activation</li><li>Operation</li></ul>
+                </div>
+                <div class="service-card">
+                    <h3>Social Media</h3>
+                    <ul><li>Content creation</li><li>Campaign</li><li>Community management</li></ul>
+                </div>
+            </div>
+        </section>
 
-/* =========================
-   HEADER
-========================= */
+        <section class="team-section" id="about">
+            <h2 class="section-title">THE POWERHOUSE BEHIND TRND</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img"><img src="member1.jpg" alt="Khalid"></div>
+                    <h3>Khalid Sallam</h3>
+                    <p>Team Leader</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-img"><img src="member2.jpg" alt="Ahmed"></div>
+                    <h3>Ahmed Sallam</h3>
+                    <p>Art Supervisor</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-img"><img src="member3.jpg" alt="Morad"></div>
+                    <h3>Morad Omar</h3>
+                    <p>Graphic Design</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-img"><img src="member4.jpg" alt="Ahmed"></div>
+                    <h3>Ahmed Sallan</h3>
+                    <p>Art Superviso</p>
+                </div>
+            </div>
+        </section>
 
-header{
- position:fixed;
- top:0;
- width:100%;
- padding:20px 60px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- transition:.4s;
- z-index:999;
-}
+        <section class="partners-section">
+            <h2 class="section-title">OUR PARTNERS</h2>
+            <div class="partners-logos">
+                <img src="partner-nrc.svg" alt="NRC">
+                <img src="partner-fao.svg" alt="FAO">
+                <img src="partner-ksa.svg" alt="KSA">
+                <img src="partner-sos.svg" alt="SOS">
+                <img src="partner-care.svg" alt="Care">
+            </div>
+        </section>
+    </main>
 
-header.scrolled{
- background:#05142bdd;
- backdrop-filter:blur(10px);
-}
+    <footer class="main-footer" id="contact">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="logo.svg" alt="TRND"> <span>®</span>
+            </div>
+            <div class="footer-social">
+                <h4>FOLLOW US</h4>
+                <div class="links">
+                    <a href="#">Facebook</a>
+                    <a href="#">instagram</a>
+                    <a href="#">linkedin</a>
+                </div>
+                <div class="subscribe">
+                    <input type="email" placeholder="your email addderss">
+                    <button class="sub-btn">→</button>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact us</a>
+            </div>
+            <div class="footer-info">
+                <p>Yemen, Sana'a, Haddah St., behind Zahr Allaimoun.</p>
+                <p>M. +967 773 221 441</p>
+                <p>E. info@thetrnd.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            ©2026 thetrnd. All right reserved
+        </div>
+    </footer>
 
-nav a{
- margin-left:30px;
- text-decoration:none;
- color:white;
- font-weight:500;
- transition:.3s;
-}
+    <script src="script.js"></script>
+</body>
+</html>
 
 nav a:hover{
  color:var(--primary);
